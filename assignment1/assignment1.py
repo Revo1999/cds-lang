@@ -73,7 +73,7 @@ def main():
 
             df = pd.concat([df, write_row], ignore_index=True)
 
-        df.to_csv(f"tables/{folder} table.csv", index=False)
+        df.to_csv(f"tables/{folder}_table.csv", index=False)
         
 if __name__ == "__main__":
     main()
