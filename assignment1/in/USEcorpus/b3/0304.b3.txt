@@ -1,0 +1,37 @@
+<doc.id=0304.b3>
+Introduction 
+About 350 million people, spread all over the world, have English as mother tongue. Due to all different dialects, Received Pronunciation, or RP as it is commonly called, was made a model, a form of English that would be easy to understand in most situations. However, the working-class accent of London is today a very influential source of phonological innovation in England and perhaps in the whole English-speaking world. Cockney is the traditional working-class dialect of London, especially in the East End area. Even Estuary English, or E.E has a strong influence on RP. E.E is a dialect between Cockney and RP. It is spoken mostly in suburban areas of Greater London and the counties of Essex and Kent lying to the north and south of the Thames Estuary, therefore also the name. Since both these dialects are so influential on RP, I will here try to show their typical features and compare them to each other and to RP.
+
+Previous research
+The material I have used for this essay is Accents of English 1 (Wells 1982), an article on Estuary English: Tomorrow's RP? (Rosewarne 1994), a handbook in English Pronunciation (Johansson and Rönnerdahl 1993), English Accents and Dialects (Hughes and Trudgill 1987) and a type recording of a man speaking Cockney, borrowed from the English Department, the Uppsala University.
+Cockney
+
+One typical characteristic of Cockney is the glottal stop. It is a sound made by an complete closure followed by an opening again of the glottis (the space between your vocal cords) It usually replaces the consonants / p, t, k /. Words like whip, wit and wick might therefore all be pronounced as . Even / f,v, / can be glottalized. Different becomes for example, give them, other and Southen. However, the latter ones are not as common as / p, t, k / and are considered more rougher Cockney. H-dropping is another characteristic. The final / h / may be missing in words like heat and harm. The result of this is that they are pronounced in the same way as RP eat and arm. A Cockney speaker may also pronounce /h/ where a RP does not pronounce it. As for example in No I ain't. There is also a difference in pronunciation of RP / i:, u: / and closing diphthongs.
+<table removed>
+
+Examples in table: 
+Be, decent
+Bay, day, gay
+Buy, die
+Boy, toy
+Food, soup
+Goat, soap
+Allow, mouth
+	 (Johansson and Rönnerdal 1993: 169) 
+
+Triphthongal realisations also occur, however, they are restricted to sentence-final position as in over here. RP diphthongs can also become monophthongs in Cockney. For example RP / / as in house can be pronounced . The two latter are considered as very rough Cockney though. The TH-fronting is another very well known characteristic of Cockney. The dental fricatives are replaced by the labiodentals f and v respectively. Thus, thin becomes fin and brother
+Also typical Cockney is the dark / l /. It often occurs in syllable- final positions. The phonetic result of this development is a close back vocoid of the type o, As for example in fill which becomes fio . However, this is a sound change very much in progress and speakers are by no means consistent. Other typical features of Cockney are the / / sound in RP which is pronounced / n / in Cockney. The / j / is often dropped after / t, d, n / as in tune, duke and new, the so called Yod-dropping. / t, d / may be pronounced as affricates ts, dz as in tea and day.
+
+Estuary English
+Although E.E is a mixture of Cockney and RP, there are individual features. For example the / w / is used where RP uses / l / in final position. Forty and faulty can therefore both be pronounced "fowty" and awful and all full can sound the same. This might of course cause problems in communication. E.E does use glottal stop for / t / and / d /, i.e. fewer than Cockney, but more than RP. The pronunciation of / r / in E.E differs from both Cockney and RP. In RP, the tip of the tongue is held close to the rear part of the upper teeth ridge and the central part of the tongue is lowered. In E.E the tip of the tongue is lowered and the central part raised to a position close to, but not touching, the soft palate. The result of this is quite different from RP. What the vowels concern, they are in final position pronounced longer than in RP and tend toward the quality of a diphthong. For example, RP /i:/ becomes E.E, the same as in Cockney. RP /u:/ as in blue becomes . Blow and blue can therefore be pronounced in the same way. E.E does also stress words different. For example, they tend to stress prepositions and auxiliary verbs as in "Totters have been in operation FOR years". To a RP speaker this sounds like four years. Also the intonation is different. E.E has a greater use of question tags such as isn't it?and don't I?. The rises do not reach as high a pitch as they would in RP. An E.E speaker might therefore seem to lack in enthusiasm. 
+
+Cockney versus Estuary English
+At first sight it can seem difficult to distinguish the two dialects. Cockney has to a great deal influenced E.E. Neither of them tend to pronounce / l / in final positions and they both use glottal stop, though Cockney uses it to a greater extent than E.E. The usage of diphthongs differ in both accents from those used in RP. However, Cockney tends to use diphthongs in central positions as in food, while E.E lengthens the vowels in final position as in me. E.E does also pronounce / r / in a way that differs from Cockney. On the whole, Cockney is a broader accent than E.E and has more features that differ from RP.
+
+Investigation of Cockney features
+To better demonstrate how the different Cockney features might occur in spoken language, I have listened to a tape recording of an East Ender speaking Cockney. With the written and phonetic translation I have done, I will try to show how often and where the characteristics of Cockney occur. Due to the limited material it is of course difficult to make an extensive investigation but hopefully it will cause the reader, to at least some extent, a better insight of the Cockney features. 
+
+Written translation:
+But...my father had a very tough time because his father died when he was nineteen leaving him the only one working to bring up eleven...eh...ten brothers and sisters and on a Thursday night he would sometimes go home and the youngest two would be crying in the corner and he would say "what's the matter with them mum" "Oh well Harry you know it's Thursday night and you don't get paid till tomorrow and they literally didn't have any food in the house.
+The underlined parts are those where the characteristics of Cockney occur.
+</doc>

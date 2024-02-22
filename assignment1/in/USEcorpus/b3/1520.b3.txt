@@ -1,0 +1,66 @@
+<doc.id=1520.b3>
+<title> THE CHARACTERISTICS OF AFRICAN AMERICAN VERNACULAR ENGLISH: A LINGUISTIC INVESTIGATION </title>
+Introduction
+My purpose is to investigate the characteristics of African-American Vernacular English (AAVE), also called Black English or ebonics (from ebony). The impact of AAVE in music, literature and film has grown. To foreign speakers of English, it is sometimes difficult to understand what speakers of AAVE mean and why they speak like they do. The impression could be that AAVE is less structured and simply a dialect for the lower class. The truth is that ebonics has linguistic rules, but different ones than Standard English. It is interesting to clarify these rules and tendencies. I will therefore put most emphasis on presenting the syntactical/grammatical and phonological differences between AAVE and SE. I also found it important to mention something about the origins and opinions about AAVE. My primary sources are: fiction by Walter Mosley and Toni Morrison, and African-American musicians: R.Kelly, Lauryn Hill, Jay-Z, and Erykah Badu. My secondary sources include an extract from Finegan: Language - its structure and use, and Svartvik: Engelska - öspråk, världsspråk, trendspråk, and information from the AAVE homepage. I have abbreviated the Internet site addresses Internet Source 1,2,3 (IS1, IS2, IS3) and so on. The full addresses are in the References list below.
+The abbreviations that I will use are AAVE for African-American Vernacular English, SE for Standard English (in this case General American English), and SWEV for Southern White English Vernacular. I have used secondary sources to find out the theoretical differences between AAVE and SE, and then I have looked in my primary material to find how frequent all these differences are. Some of them I had to omit in my presentation, since I could not find enough evidence of them being used in present-day AAVE. On the other hand, I found examples in my primary sources, but no theory to explain them. To avoid guesses, I chose the examples that I had "evidence" for. 
+
+Where does AAVE come from?
+
+There is controversy in the U.S. about the origins of ebonics. It is not a regional dialect (even if it started out that way), like SWEV, since African-Americans in the whole of the U.S. speak similarly (Johansson/Rönnerdal 1993:187). The structure of AAVE bears resemblance to both SWEV and West-African Creole (IS3). West-African Creole was the language that the slaves brought to the U.S. used to communicate. The segregation that slaves experienced and African-Americans experience today (IS4) has helped to maintain the special qualities and "the rapping/syncopated style..." (Kanwar 1993:xiv). 
+
+Is AAVE a language or a dialect?
+
+In the school district of Oakland, California, there are 26,000 AAVE-speaking students. The school board has approved a resolution that gives AAVE the status of a language, not a dialect. They did this to make it easier for the students, who had difficulties learning SE. These tudents will thus have a different primary language than SE speaking students, and will receive appropriate secondary language training (Svartvik 1999:148). This has evoked great debate, especially as the first resolution said: "Whereas...studies have also demonstrated that African Language Systems are genetically-based and not a dialect of English..." (IS5). The word "genetically-based" was omitted in the amended version. Everyone speaks a dialect and that has to do only with where you are born (socially and geographically) and what efforts you make to change your speech, not with your genes (Finegan 1994:423). According to Svartvik (149-150) linguists in general think of AAVE as a dialect, and rejected the resolution because it associated language with race. They claim that the social factors that has created AAVE (segregation) must be noticed. Some linguists welcomed the resolution, however, and the recognition of the uniqueness of AAVE. They hope that ebonics now will get more status, and not be seen as slang or "careless speech" (IS5).
+
+Characteristics of AAVE
+PHONOLOGY
+[1] Shortening and simplification of consonants
+An instead of and, ho instead of home, gon instead of gonna. Ex. "They took her from me an' she died!" (Kanwar 1993:83), "I have a ho, and I take it everywhere I go" (Badu, Appletree). It is clear from the reflexive pronoun it, that Badu here means home and not ho, which is an insulting word for a woman. Also, going becomes goin and during becomes duin (IS2). This occurs in several other American dialects, but more in AAVE (Finegan 1994:423). 
+[2] Different pronunciations of th
+Ex. R.Kelly's song title "If I'm Wit You", where th is pronounced as t. More frequent is the pronunciation of th as d: "Dis is my brother". If the th is final, it is often pronounced as f, mouth becoming mouf (IS1). When the th occurs in the middle of a word, it can be pronounced as v: "my bruvver" instead of my brother (IS3).
+[3] Metathesis
+Ask becomes ax. Ex. "Ax em to die for you and they yours for life" (Morrison 1973:83). 
+[4] The pronunciation of -ing
+Ex. "What is this strange thang inside of me" (Erykah Badu, No Love). The
+ -ing in sing and thing are pronounced -ang. However, if the -ing is a suffix, it is pronounced -in, as in nothin' (IS1).
+
+[5] Longer vowels
+Ex. "She caint take non'a money out" (Mosley 1994:192). The a in can't becomes a diphthong (IS2). 
+
+SYNTAX/GRAMMAR
+[6] Double/triple negation
+Ex. "You don't show no love" (Badu, No Love). This is very frequent in AAVE; there can be multiple negations in a sentence. It gives more melody and ease if the disyllabic word any is excluded. Simplifications like these are natural, and occur in several other dialects (Svartvik 1999:148). 
+	[7] Uninflected be/be as a habitual marker
+Ex. "Only ballers be allowed up here" (Kelly, We Ride). Where SE has the inflected form are, AAVE uses the infinitive form. Be is also used in future perfect: "I be finished this tomorrow", SE "I will have finished this tomorrow" (Svartvik 1999:148). Be can also indicate a habit: "I be having coffee there everyday" (Finegan 1994:424).
+	[8] Omitted copula be
+Ex. "Some wan' play young Lauryn like she dumb, but remember not a game new under the sun" (Hill, Lost Ones). Inflected be are often omitted in AAVE.
+[9] It instead of there
+Ex. "It is no coffee left" (Finegan 1994:424).
+	
+	[10] Different verb-inflections
+Ex. "My emancipation don't fit your equation" (Hill, Lost Ones), "See I picks my friends like I pick my fruit" (Badu, Appletree), "And the roof, the roof, we sets on fire" (Kelly, Home Alone). As mentioned before, AAVE is closely related to SWEV. The adding and omitting of inflections are probably typical for SWEV, at least if we compare it with the short story "Where is that voice coming from?" by Eudora Welty, set in the South of the U.S. In the story, the white main character uses the same type of inflection:"I says to my wife"...(Oates 1992:481). The most common usage of inflections, however, is to use the same verb form for all subjects: I do, you do, he do (IS1).
+[11] The negations ain't, don, ditn
+Ex. "Couldn't talk about it if you ain't live it" (Jay-Z, Love the Doe), "You act like you ain't hear him...(Hill, DooWop). The purpose of ain't is to negate ongoing actions. It means did not (Svartvik 1999:146) in the examples, but can also be a form of the main verb be+not: "There ain't nothin' you can do about it" (Kelly, When a Woman's Fed Up), here featured with a double negation, nothin', instead of is not anything, or is nothing. The meaning have not does also occur: "I ain't seen a body..." (Mosley 1994:162). Other negations are don, the use of which is restricted to verbs that take be as an auxiliary (see the examples under [7] above). Ex. "She don be having coffee there", SE "She is not having coffee there" (IS1).
+Summary
+What I wanted to show in this investigation was a list of common speech habits in AAVE. There are many more examples of differences between AAVE and SE than those above, but I believe I have chosen the most frequent examples. Important differences to remember for those who want to understand ebonics are: the simplification of consonants (duin', nothin')the use of be, the double negations, and the omitting of be ("She nice"). In several books, e.g. Yule The Study of Language (241), it is claimed that just the features that occur in AAVE belong to the lower social class. I wanted to be careful about drawing such conclusions about my results, since there are different opinions about that. It can be said, however, that ebonics is sometimes simpler than SE, but that does not necessarily have to be negative. When you speak, you want to make it easy for yourself. Therefore, it is quite natural to say "I ain't done nothin'" instead of "I have not done anything".
+
+References
+
+Badu, E, 1997. Baduizm, Kedar Entertainment/Universal Records
+ cal.org/ebonics/ebfillmo.htm
+ colorado.edu/ling/sp99/1000/outline/feb12.html
+ deik.linguistics.uga.edu/AAVE/home.html
+ edu-ss10educ.queensu.ca/~qbell/update/tint/postmodernism/var1.html
+ emich.edu/~linguist/topics/ebonics/ebonics-res1.html
+Finegan, E, 1994. Language - its structure and use. Orlando: Harcourt, Brace &Co
+Hill, L, 1998. The Mis-Education of Lauryn Hill, Ruffhouse Records LP/Columbia
+Jay-Z, 1999. Vol.3...Life and Times of S.Carter, Roc-A-Fella Records/Universal Records
+Johansson, S/Rönnerdal, G, 1993. English Pronunciation - A Handbook. Lund: Studentlitteratur
+Kanwar, A, 1993. The Unforgetting Heart - an anthology of short stories by African-American women. San Fransisco: Aunt Lute Books
+Kelly, R, 1998. R, Zomba Recording Corporation
+Morrison, T, 1973. Sula. London: Vintage
+Mosley, W, 1994. Black Betty. New York: Pocket Star Books
+Oates, JC, 1992. The Oxford Book of Short Stories. New York: Oxford University Press
+Svartvik, J, 1999. Engelska - öspråk, världsspråk, trendspråk. Falun: Norstedts Ordbok AB
+Yule, G, 1996. The study of language, 2nd ed. Cambridge: Cambridge University Press
+</doc>

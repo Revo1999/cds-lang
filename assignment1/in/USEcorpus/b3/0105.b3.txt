@@ -1,0 +1,67 @@
+<doc.id=0105.b3>
+<title> African-American Venacular English </title>
+Introduction
+
+	When I first heard of African-America Vernacular I have to admit I was a little surprised and also a little ashamed. During my years in America I encountered several African-Americans but I always thought that what they were talking was nothing but plain slang. But when I started reading I realized that in fact it is almost a language of its own. Besides having its own vocabulary it has its own grammar, syntax and phonological features. 
+
+In this essay I intend to show a list of the different features and also with the help of Toni Morrison's Sula, give some examples of the more common ones, like multiple negation and the different use of the verb be.
+
+Previous research
+
+	To my help at this task I have taken, as previous mentioned, Toni Morrison's Sula for examples. I will also be using Edward Finegan's Language Its Structure and Use to find the more common features and Yule's The study of language for a clearer definition of what African-American Vernacular English really is. Finally I have found a sight on the Internet with a, hopefully, complete list of the linguistic features. This I will include to show just how complexed this "language" really is.
+
+Material and method
+
+In Finegan I found that simplification of consonant clusters was the most common phonological feature and I did indeed find some examples of this although the ones I found the most examples of was the loss of the letter, g, in the -ing form, for example in sittin', eatin', holdin' and killin'.I also found some examples of the -ed form being used where it was not appropriate as in "I knowed it was true" instead of "I knew it was true". 
+
+These last two is according to Yule not part of AAVE but instead a sign of lower class or poor education. Examples I found plenty of was the different usage of the verb be. Both lack of, as well as it being used in the wrong tense according to Standard English. Also double negation is used frequently, so this I will show examples of. So these are the three aspects I will take up, double negation, simplification of consonant clusters and the usage of the verb be. And then I will give one or two examples of a few other features which was not very frequent but still I could find it. Abbreviations I will use are SE for standard English and also AAVE for 
+
+African-American Vernacular English. 
+
+Historical background
+
+	The origin of African-American Vernacular English, or AAVE for short, is devided into two hypotheses, the dialectal and the creole. The first of the two is based on the idea that when slaves came to America their language acquisition was slow as well as incorrect which led to these "mistakes" that some people even today claim that they really are. The other hypothesis, the creole hypothesis, is that when slaves where sold and bought by slave owners they would not only end up at the plantations with people who spoke their own language. Instead people with many different languages were gathered and had to find a common language in order to communicate with each other. Thus developed a pidgin, containing vocabulary from English combined with that of different West African languages. All of this was spoken with the grammar rules of the old country. As this language was passed on through generations it became the primary language and thus a creole.
+
+The usage of African-American Venacular English in Sula
+
+	AAVE			SE	
+
+ Double	You see, there wasn't no sign.	You see, there was no sign.
+ negation	I ain't never coming down.		I am not ever coming down.
+	I didn't mean nothing by it.	I didn't mean anything by it.
+	Didn't nobody tell you?		Didn't anybody tell you?
+	You haven't changed none.		You haven't changed.
+
+Simplification Lemme show you something.	Let me show you something. of consonant	Jes a piece.			Just a piece.
+ clusters	You got a lil ole piece layin'	(Have) you got a little old piece 
+				laying.
+	Jude must be wore out.		Jude must be worn out.
+
+Different	They's all deweys.		They are all deweys.
+ usage of	When we was little.		When we were little.
+ the verb be.	All them women is dirt poor.....	All (of those) women are dirt poor...
+	Niggers was dying.		Niggers were dying.
+
+Lack of the	That your only one?		Is that your only one?
+ verb be	You all right?			Are you all right?
+You the one should have been burnt.	You are the one (who) should have been burnt.
+	How you doin'?		How are you doing?
+
+Tense	You don't know how old he was	You don't know how old he was 	when he come here.....		when he came here......
+
+Conclusion
+
+	Even though Sula proved to be a good book to find examples of African-American Vernacular English I found it to be a little bit insufficient, there were lots of examples of certain aspects of AAVE but on others there was no trace. For instance is the AAVE supposed to have its own vocabulary which I could not se any evidence of. On the other hand it had also examples of other features of language that are being studied in sociolinguistics, since besides from being African-American, the people in the book were also poor and uneducated. 
+	
+
+The different features of African-American Venacular English
+
+	This list that I found over the Internet is divided into three different features, morphological, phonological and syntactic.
+<list removed>
+
+References
+Finegan, Edward.1999. Language Its Structure and Use. Third edition. Harcourt Brace College Publishers.
+Yule George.1998. The study of language. Second edition. Press syndicate of the University of Cambridge.
+Morrison Toni.1982. Sula. First Plume Printing.
+ www.arches.uga.edu/~bryan[LS1]/AAVE/
+</doc>

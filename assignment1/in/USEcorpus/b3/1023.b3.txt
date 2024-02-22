@@ -1,0 +1,64 @@
+<doc.id=1023.b3>
+<title> African-American Vernacular English and its common features </title>
+1. Introduction
+One of the most spread varieties of American English is African-American Vernacular English, formerly called Black American English. As the name suggests this variety is primarily used among African-Americans and mostly among young urban African-Americans. But this variety of English is also used among Americans with other ethnic backgrounds, since people speak the variety of language they grow up with, regardless of their skin colour. This is why it is very hard to give an exact number of speakers of the dialect. African-American Vernacular English has previously been accused of being both ill-formed and grammatically inferior to e.g. American English, but the fact is that this particular dialect has its own sets of morphological and phonological rules and standards, just as any language or dialect.
+
+1.2. Aim
+In this essay I will present some of the most common features in morphology and phonology in African-American Vernacular English and point out how they differ from standard American English. Furthermore, I will use examples from the novel Clockers (Price 1992) to demonstrate how these features are actually being used in practice, by "real" people, and that they do not only exist in a theoretical context.
+
+1.3. Material and Method
+For the above mentioned purposes I will use the following books or texts: Black Street Speech - Its history, Structure and Survival (Baugh 1983), Language, its structure and use (Finegan 1994) and the novel Clockers (Price 1992). With the help of the two first-mentioned I will present a few of the most common grammatical features and standards specifically used in African-American Vernacular English, and with the help of Clockers I will present examples that show how the features are used in practice. The story of Clockers takes place in an African-American New York ghetto-environment and includes much 'street talk' and African-American jargon, and therefore the novel should be suitable for my purposes.
+
+2. Presentation of results, discussion
+2.1. The use of the word "be"
+Typical of African-American Vernacular English is that the word "be" - as is also the case with other copula verbs - is omitted in present tense, especially in cases where the contracted form of "be" is used in Standard American English. Example: (Note that all the examples below are taken from the novel Clockers, except for the example 2.2, which is a quite common expression found in e.g. movies, but which I still could not find in Clockers.)
+
+African-American Vernacular		Standard American
+"Houses. You learnin'." (56)		"Houses. You're learning."
+"Yeah, we still together." (118)		"Yeah. We're still together."
+
+When actually using the word "be", speakers of African-American Vernacular English often want to indicate an action that is repeated or continuous:
+
+African-American Vernacular		Standard American
+Shit, you be tellin' people all your	Shit, you always tell people all 
+ moves before you make 'em! (174)		your moves before you make them!		
+
+2.2. The use of "it is" instead of "there is"
+Another common feature in African-American Vernacular English is the use of "it is" where speakers of standard American English use "there is":
+
+African-American Vernacular		Standard American
+"It ain't nothing you can do about it!" 	"There's nothing you can do about it!"
+
+2.3. Multiple negations
+One feature in African-American Vernacular English, which is often heard in movies, song lyrics etc., is the double negation. A typical double negation is "I do not know nothing", compared to Standard American English "I do not know anything". According to Baugh (1983:82) double negations tend to be more frequent among young 'street-speakers' than among adults. Baugh thinks this is beacuse adults adjust their speech to become more formal when needed, whereas young people do not. The double - or multiple - negation has almost become a trademark of this particular variety of American English, due to its frequent use.
+
+African-American Vernacular		Standard American
+"See, I told you don't worry about no	"See, I told you don't worry about 
+Champ." (259)			any Champ."
+
+2.4. The use of the inflexion -s
+Speakers of African-American Vernacular English quite often leave out the -s-inflexion when dealing with the third person singular form, at least when speaking on an informal level. This is also often the case with -s as a plural ending or genitive. On the other hand, 'street-speakers' often use the -s-inflexion too frequently, when trying to be formal. This, according to Baugh (1983:94, 65), may be caused by the fact that these people are uncertain of the correct use of the suffix.
+
+African-American Vernacular			Standard American
+"Do you know that more young mens get killed	"Do you know that more 
+ on Thursday nights...[...]?" (52)		young men...[...]?"
+"You mind if I do it? I loves doing Strike." (279)	"Do you mind if I do it? I love doing Strike."
+
+2.5. Dental stops
+Another feature typical of at least younger speakers of African-American Vernacular English is the use of a simple "d"-sound instead of the Standard American variant "th". This phenomenon is not much mentioned in Baugh's or Finegan's texts, but it is a common feature in different kinds of popular culture, such as music and movies. A typical example is the use of the word "da" instead of "the". "Da bomb" was the name of a very popular song a couple of years ago. Other examples of this are rap groups with names like Da Grave Diggaz and Da Alcaholics. I also found several examples of dental stops in Clockers:
+(examples on next page)
+
+African-American Vernacular		Standard American
+"Dis toothbrush?" (207)		"This toothbrush?"
+"De wrong brother." (383)		"The wrong brother."
+
+3. Conclusion
+The different morphological and phonological features of African-American Vernacular English that I found in Baugh's and Finegan's handbooks were almost without exception also represented in the novel Clockers. In this essay I have chosen to leave out a few specific features, since they were of the phonological kind that I could not present in the form of textual examples. I have also chosen not do deal with obvious expressions such as "gonna" and "ain't" since they tend to have spread into almost all the other existing varieties of American English and are no longer typical of the "street-speech". Naturally there is a lot more to say about different grammatical features of this particular dialect. The ones in this essay, however, are a few of the most common ones. Nevertheless, the fact that so many examples of 'street-speech'-grammar and features mentioned in Baugh's and Finegan's handbooks easily could be found in the novel Clockers clearly shows that African-American Vernacular English includes a set of grammatical rules that obviously are applied in every day speech. Thus the dialect is not just a row of "black slang words" put together, but is also to be taken seriously from a linguistic point of view.
+
+References:
+Baugh, John. 1983. Black Street Speech - Its history, Structure and Survival. Austin, Texas: University of Texas Press
+
+Finegan, Edward. 1994. Language, its structure and use. Orlando, Florida: Harcourt Brace & Company
+
+Price, Richard. 1992. Clockers. New York: Avon Books
+</doc>
