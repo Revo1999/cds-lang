@@ -28,7 +28,7 @@ def main():
         folderpath = os.path.join(directory, folder)
         print(f'processing folder: {folder}')
         df = pd.DataFrame()
-        for file in tqdm(os.listdir(folderpath)):
+        for file in tqdm(os.listdir(folderpath), colour='green'):
             filename = file
             filepath = os.path.join(folderpath, filename)
 
