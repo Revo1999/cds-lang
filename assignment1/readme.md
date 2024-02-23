@@ -8,6 +8,7 @@ More information and download link for data (Beware of terms of usage!): [click 
 
 #### Project Structure
 
+```
 Assignment 1/
 ├── in/
 │   └── USEcorpus/
@@ -21,6 +22,7 @@ Assignment 1/
 ├── readme.md
 ├── requirements.txt
 └── start.sh
+```
 
 #### Dependencies
 
