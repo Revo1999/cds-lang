@@ -8,7 +8,7 @@ More information and download link for data (Beware of terms of usage!): [click 
 
 #### Project Structure
 
->Assignment 1/
+Assignment 1/
 ├── in/
 │   └── USEcorpus/
 │       ├── a1
