@@ -42,10 +42,10 @@ def calculate_relative_frequencies(doc, exclude_punctuation):
             else:
                 num_words = sum(1 for token in doc)
 
-            noun_freq = round(pos_counts.count('NOUN')/num_words*10000, 2)
-            verb_freq = round(pos_counts.count('VERB')/num_words*10000, 2)
-            adj_freq = round(pos_counts.count('ADJ')/num_words*10000, 2)
-            adv_freq = round(pos_counts.count('ADV')/num_words*10000, 2)
+            noun_freq = round(pos_counts.count('NOUN')/num_words*relative_frequency_count, 2)
+            verb_freq = round(pos_counts.count('VERB')/num_words*relative_frequency_count, 2)
+            adj_freq = round(pos_counts.count('ADJ')/num_words*relative_frequency_count, 2)
+            adv_freq = round(pos_counts.count('ADV')/num_words*relative_frequency_count, 2)
             
             return noun_freq, verb_freq, adj_freq, adv_freq
 
@@ -122,5 +122,8 @@ if __name__ == "__main__":
 
     #When counting words dont count punctuation
     exclude_punctuation=True
+
+    #Total frequency for relative frequency calculation
+    relative_frequency_count = 10000
 
     processor()
