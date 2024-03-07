@@ -100,8 +100,7 @@ def processor():
 
             df.to_csv(f"{save_tables_location}/{folder}_table.csv", index=False)
         
-if __name__ == "__main__":
-
+def main():
     # Simply ingores pandas' py-arrow future warning
     warnings.simplefilter(action='ignore', category=FutureWarning)
 
@@ -127,3 +126,8 @@ if __name__ == "__main__":
     relative_frequency_count = 10000
 
     processor()
+
+
+
+if __name__ == "__main__":
+    main()
