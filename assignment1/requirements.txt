@@ -1,0 +1,2 @@
+python -m spacy download en_core_web_md
+pip install spacy pandas tqdm

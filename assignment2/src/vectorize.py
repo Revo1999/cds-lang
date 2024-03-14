@@ -44,6 +44,12 @@ def argument_collection():
                 default=os.path.join(  '..', 'in', 'fake_or_real_news.csv' ),
                 help="input path for csv-file to be vectorized. Example: ../in/fake_or_real_news.csv")
         
+        parser.add_argument(
+                "-f",
+                "--file_path_save_fitted_data",
+                default='../fitted_data/fitted_variables',
+                help="changes directory of saving fitted data (must be a string!). Example: '../fitted_data/fitted_variables'")
+
         
         return parser.parse_args()
 
@@ -58,7 +64,8 @@ def main():
                     save_model_path = argument_collection().overwrite_save_path,
                     training_split_value_percent = argument_collection().training_test_split,
                     shuffle_seed = argument_collection().shuffle_seed,
-                    data_file_path = argument_collection().data_input_path)
+                    data_file_path = argument_collection().data_input_path,
+                    file_path_save_fitted_data = argument_collection().file_path_save_fitted_data)
 
 
 if __name__ == "__main__":
