@@ -1,0 +1,90 @@
+from helperfunctions import work_here, colorbank
+import polars as pl
+import os
+import gensim.downloader as api
+import argparse
+
+def load_glove_wiki_gigaword50():
+    #From my understanding it downloads in a specific place, when downloaded it will not download again.
+    print('loading gensim pretrained model: glove-wiki-gigaword-50')
+    return api.load("glove-wiki-gigaword-50")
+    print(colorbank.hackergreen + 'model loaded' + colorbank.default)
+
+def load_spotify_csv():
+    data_file_path = os.path.join('..', 'in', 'Spotify Million Song Dataset_exported.csv')
+
+    #Loads csv and drops link column, as this will not be used
+    data = pl.read_csv(data_file_path).drop("link")
+
+    #Fixing a mistake in the data set
+    data = data.with_columns(artist=pl.col("artist").replace("'n Sync", "N Sync"))
+
+    return data
+
+
+def input_check(input):
+    if input.lower() in data['artist'].str.lower().to_list():
+        return True
+    else:
+        print('Artist is not in dataset')
+        return False
+
+
+
+def create_search_words(word_input, model, words_result_amount):
+    model_words = model.most_similar(word_input.lower(), topn=words_result_amount)
+    output_words = []
+
+    # Extend instead of append
+    output_words.extend(model_words)
+
+    concat_words = ""
+
+    for words, _ in output_words:
+        # Use 'words' directly instead of indexing 'output_words'
+        concat_words = concat_words + "|" + words
+
+    return word_input.lower() + concat_words
+
+def processor(word, model, data, words_result_amount, artist, extended_info):
+    concated_search = create_search_words(word_input=word, model=model, words_result_amount=words_result_amount)
+
+    if extended_info == True:
+        print(f"Your extended search is: {concated_search}")
+
+
+    compare = result = data.filter(
+        #Must be correct otherwise ABBA would also return Black S-ABBA-th
+        (data['artist'].str.to_lowercase() == artist.lower()))
+
+    result = data.filter(
+        #Must be correct otherwise ABBA would also return Black S-ABBA-th
+        (data['artist'].str.to_lowercase() == artist.lower()) &
+        #Looks all the text to see if it contains. Might result in false positives ('lovesick' contains 'love')
+        (data['text'].str.to_lowercase().str.contains(concated_search.lower()))
+    )
+
+    procentage_hit, artist_cased, searched_word = round(result.shape[0]/compare.shape[0]*100, 1), result[0,0], word.lower()
+
+    #Prints answer to console
+    print(f"{procentage_hit}% of {artist_cased}'s songs contain words related to {searched_word}")
+
+
+def main():
+    work_here()
+
+    words_result_amount = 3
+    artist = 'pHiL CoLliNs'
+    word = 'AiR'
+    extended_info = False
+
+    model = load_glove_wiki_gigaword50()
+    data = load_spotify_csv()
+
+
+    processor(word=word, model=model, data=data, words_result_amount=words_result_amount, artist=artist, extended_info=extended_info)
+
+
+if __name__ == "__main__":
+    main()
+

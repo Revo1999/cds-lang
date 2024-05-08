@@ -1,1 +1,3 @@
-pandas
+gensim==4.3
+polars==0.2
+scipy==1.11

@@ -1,0 +1,9 @@
+tqdm
+transformers
+polars
+tensorflow
+tf-keras
+torch
+git+https://github.com/Revo1999/vrashelper
+altair[all]
+vegafusion
