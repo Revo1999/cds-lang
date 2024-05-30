@@ -124,12 +124,13 @@ def main():
     vf.enable() # Enables vegafusion to convert polars dataframes to altair, otherwise it would copy a polars dataframe turn it into pandas and then give it to altair
 
     visualize_line_chart(relative_frequencies).save("../out/LineChart.png")
-    bar_chart(value_counts).save("../out/BarChart.png")
-
     
+    
+    for season in season_counts['Season'].unique().to_list():
+        plot =  season_counts.filter(pl.col("Season") == season)
+        bar_chart(plot).save(f"../out/BarChart_{season}.png")
 
-    print(relative_frequencies)
-    print(value_counts)
+
 
 
 if __name__ == "__main__":
