@@ -8,7 +8,6 @@ import tqdm
 import shutil
 import time
 from subprocess import call
-import ast
 import glob
 import polars as pl
 import altair as alt
@@ -263,22 +262,35 @@ def copy_emission_csv(directory, to_directory):
         print(csv_list)
         for i in tqdm.tqdm(range(len(from_list)), desc="Copying Emission CSV's", colour="green"):
             directory, filename = os.path.split(to_list[i])
-            new_filename = f"{os.path.join(directory, str(os.path.normpath(directory).split(os.sep)[-1]) + filename)}" # If filenames are the same i add the index to the filename
-            print(new_filename)
+            new_filename = f"{os.path.join(directory, str(os.path.normpath(from_list[i]).split(os.sep)[-3]) + filename)}" # If filenames are the same i add the index to the filename
             shutil.copy(from_list[i],  new_filename)
-             
+
+
+def read_csv_with_filename(file_path):
+    
+    
+    data = pl.read_csv(file_path)
+    
+    
+    filename = os.path.basename(file_path)
+    
+    
+    data = data.with_columns(pl.lit(filename).alias("filename"))
+    return data
+
 def load_emissions(emission_folder):
     full_program_emissions = []
     task_emissions = []
     
     for csv_file in glob.glob(emission_folder):
-        if len(csv_file) > 30:
-            task_emissions.append(csv_file)
-        else:
+        if csv_file.endswith("emissions.csv"):
             full_program_emissions.append(csv_file)
+        else:
+            task_emissions.append(csv_file)
 
-    full_program_emissions_read = [pl.read_csv(csv_file) for csv_file in full_program_emissions]
-    task_emissions_read = [pl.read_csv(csv_file) for csv_file in task_emissions]
+    full_program_emissions_read = [read_csv_with_filename(csv_file) for csv_file in full_program_emissions]
+
+    task_emissions_read = [read_csv_with_filename(csv_file) for csv_file in task_emissions]
 
     full_program_emissions_all = pl.concat(full_program_emissions_read)
     task_emissions_all = pl.concat(task_emissions_read)
@@ -308,18 +320,49 @@ def visualize_emissions():
 
     bar_chart(data = full_program_emissions_all, x_name="project_name", y_name="emissions", graph_title="Py files Emissions").save(os.path.join("..", "out", "Emissions2.png"))
 
-    unique_py_files = task_emissions_all['project_name'].unique().to_list()
-    
+    unique_reports = full_program_emissions_all['filename'].unique().to_list()
 
+
+    full_program_emissions = []
+    for reports in unique_reports:
+        visualize_this_df = full_program_emissions_all.filter(pl.col("filename") == reports)
+        visualize_this_df = visualize_this_df.select(pl.sum("emissions"))
+        visualize_this_df = visualize_this_df.with_columns(pl.lit(reports.replace("emissions.csv", "")).alias("name"))
+        full_program_emissions.append(visualize_this_df)
     
+    full_program_emissions_done = pl.concat(full_program_emissions)
+    full_program_emissions_done.write_csv(os.path.join("..", "out", "Full_program_emissions.csv"))
+    
+    bar_chart(data = full_program_emissions_done, x_name="name", y_name="emissions", graph_title="Assignment Emissions").save(os.path.join("..", "out", "Assignments_emissions.png"))
+
+    assignment_emissions = []
+
+    for directory in directory_to_search:
+        try:
+             part_to_match = os.path.normpath(directory).split(os.sep)[-1]
+             visualize_this_df = task_emissions_all.filter(pl.col("filename").str.contains(part_to_match))
+             bar_chart(data = visualize_this_df, x_name="task_name", y_name="emissions", graph_title=f"{part_to_match}").save(os.path.join("..", "out", f"{part_to_match}_emissions.png"))
+             visualize_this_df.write_csv(os.path.join("..", "out", f"{part_to_match}.csv"))
+        except:
+            print("No match in csv")
+
+
+
+
+
+
+
+
+
+
+
 
 vh.work_here()
 
-
-#directory_to_search = ["../../assignment1"]
 directory_to_search = ["../../assignment1","../../assignment2"]
 exclude_folders = ["assignment1_venv", "assignment2_venv", "assignment3_venv", "assignment4_venv"]
 createVEnv_filename = "createVEnv.sh"
+
 run_filename = "run.sh"
 py_exclude = ["assignment2.py"]
 
@@ -351,9 +394,4 @@ run_run_scripts(directory=os.path.join("..", "temp"), run_filename=run_filename)
 
 copy_emission_csv(directory=os.path.join("..", "temp"), to_directory=os.path.join("..", "csv"))
 
-
-'''
 visualize_emissions()
-'''
-### Visualization
-
