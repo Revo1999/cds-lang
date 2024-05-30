@@ -130,3 +130,9 @@ To gain real insights, or to use the output for analysis it needs to be coupled 
 ## Limitations
 
 The program does not present the data in an easy to understand matter, understood as the the data in the out folder is scattered across many csv's that dont present the whole picture.
+
+## Emissions
+
+*Codecarbon has been used to track the environmental impact of running this code which equates to:* **2.16 of co2-equivalents in grams**
+
+For calculation documentation see [Emissions](https://github.com/Revo1999/cds-lang/tree/main/emissions)

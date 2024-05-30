@@ -5,7 +5,7 @@ source assignment4_venv/bin/activate
 
 # run the code
 cd src
-python Predicter.py
+python predicter.py
 cd ..
 
 # close the environment

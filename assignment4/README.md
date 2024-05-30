@@ -37,23 +37,20 @@ In this assignment we were asked to create a python script for computational ana
 ## Project Structure
 
 ```
-assignment1/
+assignment4/
 ├── in/
-│   ├── image_0001.jpg
-│   ├── image_0002.jpg
-│   └── image_0003.jpg
+│   └── Game_of_Thrones_script.csv
 ├── out/
-│   ├── compare_hist_image_0321.jpg_results.csv
-│   ├── compare_hist.png
-│   ├── nearest_neighbor_image_0321.jpg_results.csv
-│   └── nearest_neighbor.png
+│   ├── Barchart_Season 1.png'
+│   ├── ..
+│   ├── Barchart_Season 8.png
+│   ├── LineChart.png
+│   └── with_predictions.csv
 ├── src/
-│   ├── nearest_neighbor.py
-│   └── open_cv_compare_hist.py     
+│   └── predicter
 ├── createVEnv.sh
 ├── README.md
 ├── requirements.txt
-├── run_custom.sh
 └── run.sh
 
 ```
