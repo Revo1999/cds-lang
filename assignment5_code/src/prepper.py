@@ -10,6 +10,9 @@ import time
 from subprocess import call
 import ast
 import glob
+import polars as pl
+import altair as alt
+import vegafusion as vf
 
 def list_files(directory, exclude_subfolders=None):
     if exclude_subfolders is None:
@@ -121,7 +124,7 @@ def run_venv_scripts(venv_filename, directory):
             sh_content = file.read()
 
         # Adds a pip install codecarbon line
-        new_sh = sh_content.replace("pip install -r requirements.txt", "pip install -r requirements.txt\n\npip install codecarbon==2.4.2")
+        new_sh = sh_content.replace("pip install -r requirements.txt", "pip install -r requirements.txt\n\npip install codecarbon==2.4.2 setuptools==70.0.0")
 
         # Saves modifications
         with open(full_file, 'w') as file:
@@ -258,19 +261,67 @@ def copy_emission_csv(directory, to_directory):
         to_list = create_to_list(to_directory, files=new_csv_list)
         
         print(csv_list)
-        for i in tqdm.tqdm(range(len(from_list)), desc=f"Copying: {os.path.split(directory)[-1]}", colour="green"):
-            shutil.copy(from_list[i], to_list[i])
+        for i in tqdm.tqdm(range(len(from_list)), desc="Copying Emission CSV's", colour="green"):
+            directory, filename = os.path.split(to_list[i])
+            new_filename = f"{os.path.join(directory, str(os.path.normpath(directory).split(os.sep)[-1]) + filename)}" # If filenames are the same i add the index to the filename
+            print(new_filename)
+            shutil.copy(from_list[i],  new_filename)
+             
+def load_emissions(emission_folder):
+    full_program_emissions = []
+    task_emissions = []
+    
+    for csv_file in glob.glob(emission_folder):
+        if len(csv_file) > 30:
+            task_emissions.append(csv_file)
+        else:
+            full_program_emissions.append(csv_file)
 
+    full_program_emissions_read = [pl.read_csv(csv_file) for csv_file in full_program_emissions]
+    task_emissions_read = [pl.read_csv(csv_file) for csv_file in task_emissions]
+
+    full_program_emissions_all = pl.concat(full_program_emissions_read)
+    task_emissions_all = pl.concat(task_emissions_read)
+
+    return full_program_emissions_all, task_emissions_all
+
+def bar_chart(data, x_name, y_name, graph_title):
+
+    x_values = str(x_name) + ":N"
+    y_values = str(y_name) + ":Q"
+    g_title = str(graph_title)
+
+    chart = alt.Chart(data).mark_bar().encode(
+    x=x_values,
+    y=y_values
+    ).properties(
+    title=g_title, width=300, height=300
+    )
+
+    # From: https://altair-viz.github.io/gallery/simple_bar_chart.html 
+    return chart
+
+def visualize_emissions():
+    vf.enable()
+
+    full_program_emissions_all, task_emissions_all = load_emissions(os.path.join("..", "csv", "*"))
+
+    bar_chart(data = full_program_emissions_all, x_name="project_name", y_name="emissions", graph_title="Py files Emissions").save(os.path.join("..", "out", "Emissions2.png"))
+
+    unique_py_files = task_emissions_all['project_name'].unique().to_list()
+    
 
     
 
 vh.work_here()
 
-directory_to_search = ["../../assignment1"]
-#directory_to_search = ["../../assignment1","../../assignment2"]
+
+#directory_to_search = ["../../assignment1"]
+directory_to_search = ["../../assignment1","../../assignment2"]
 exclude_folders = ["assignment1_venv", "assignment2_venv", "assignment3_venv", "assignment4_venv"]
 createVEnv_filename = "createVEnv.sh"
 run_filename = "run.sh"
+py_exclude = ["assignment2.py"]
 
 # Copies python files from /src in assignment folders
 
@@ -286,7 +337,8 @@ for root, dirs, files in os.walk(os.path.join("..", "temp")):
         print(py_files)
 
         for py_file in py_files:
-            py_editor(py_file)
+            if os.path.normpath(py_file).split(os.sep)[-1] not in py_exclude:
+                py_editor(py_file)
 
 press_anything_to_continue()
 
@@ -300,51 +352,8 @@ run_run_scripts(directory=os.path.join("..", "temp"), run_filename=run_filename)
 copy_emission_csv(directory=os.path.join("..", "temp"), to_directory=os.path.join("..", "csv"))
 
 
-# Visualization
-
-
-
-
-
-
-
 '''
-copy_project_folder(directory_to_search, exclude_folders)
-
-# Runs all venv files
-run_venv_scripts(directory=os.path.join("..", "temp"), venv_filename=createVEnv_filename)
+visualize_emissions()
 '''
-
-'''
-def create_function_list(py_file_path):
-
-    contents = read_py_file(py_file_path)
-
-    parsed_py_file = ast.parse(contents)
-
-    # Creates empty variable
-    main_function_node = None
-
-    for node in parsed_py_file.body:
-        if isinstance(node, ast.FunctionDef):
-            if node.name == 'main':
-                main_function_node = node
-                break
-
-
-
-    # Thanks to: https://stackoverflow.com/questions/37217823/how-to-find-detect-if-a-build-in-function-is-used-in-python-ast 
-    # Also check "ast" documentation: https://docs.python.org/3.8/library/ast.html#abstract-grammar to see different things ast can search in python file for (here it checks for functions)
-
-    # Extracts the content of the main function
-    if main_function_node:
-        main_function_code = ast.unparse(main_function_node)  # Unparse the code to text again
-    else:
-        print("No main function found.")
-
-    return main_function_code
-
-'''    
-
-
+### Visualization
 
