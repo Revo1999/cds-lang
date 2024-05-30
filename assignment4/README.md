@@ -127,7 +127,20 @@ The picture above is the relative frequencies of emotions across seasons.
 
 Across all the seasons anger is the most prevalent emotion (besides neutral) peaking in the last season. Digust declines from season 3 onwards. Joy and Fear performs relatively steadely throughout the seasons in the bottom of the chart.
 
-![1](out/BarChart_Season 1.png?raw=true)
+| Barcharts |  |  |
+|---------|---------|---------|
+| ![1](https://github.com/Revo1999/cds-lang/blob/main/assignment4/out/BarChart_Season%201.png?raw=true) | ![2](https://github.com/Revo1999/cds-lang/blob/main/assignment4/out/BarChart_Season%202.png?raw=true) | ![3](https://github.com/Revo1999/cds-lang/blob/main/assignment4/out/BarChart_Season%203.png?raw=true) |
+| ![4](https://github.com/Revo1999/cds-lang/blob/main/assignment4/out/BarChart_Season%204.png?raw=true) | ![5](https://github.com/Revo1999/cds-lang/blob/main/assignment4/out/BarChart_Season%205.png?raw=true) | ![6](https://github.com/Revo1999/cds-lang/blob/main/assignment4/out/BarChart_Season%206.png?raw=true) |
+| ![7](https://github.com/Revo1999/cds-lang/blob/main/assignment4/out/BarChart_Season%207.png?raw=true) | ![8](https://github.com/Revo1999/cds-lang/blob/main/assignment4/out/BarChart_Season%208.png?raw=true) |         |
+
+
+Throughout the barcharts the prevalence of neutral becomes obvious. This might have to due with the model defaulting the neutral when it cant decide on an emotion, but could also be due to some dialog not having an emotion. The barcharts all look quite similar, with neutral peaking, and anger second and then suprise.
+
+If you have seen Game of Thrones you might be able to contribute certain events in the seasons, that result in the changes from season to season.
+
+This type of analysis might prove itself useful to provide insights to what kind of tv-show Game of Thrones is. It might be interesting to compare these results, to other tv-shows.
+
+
 ## Emissions
 
 *Codecarbon has been used to track the environmental impact of running this code which equates to:* **21.8 of co2-equivalents in grams**
