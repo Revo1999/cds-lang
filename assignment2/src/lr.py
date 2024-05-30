@@ -1,6 +1,5 @@
-from helperfunctions import work_here
+import vrashelper as vh
 from assignment2 import lr
-
 import argparse
 import os
 
@@ -11,8 +10,8 @@ def argument_collection():
         parser.add_argument(
             "-m",
             "--model_path",
-            default=os.path.join('..','model','tfidf_vectorizor.joblib'),
-            help="file path to obtain model .joblib file. (must be string) Example '../model/tfidf_vectorizor.joblib'")
+            default=os.path.join('..','models','tfidf_vectorizor.joblib'),
+            help="file path to obtain model .joblib file. (must be string) Example '../models/tfidf_vectorizor.joblib'")
 
         parser.add_argument(
             "-i",
@@ -36,8 +35,8 @@ def argument_collection():
         parser.add_argument(
             "-d",
             "--dump_model_path",
-            default='../model/lr_classifier_model.joblib',
-            help="file path to save lr-classifier model (must be string and end with .joblib) Example '../model/lr_classifier_model.joblib")
+            default='../models/lr_classifier_model.joblib',
+            help="file path to save lr-classifier model (must be string and end with .joblib) Example '../models/lr_classifier_model.joblib")
 
         
         return parser.parse_args()
@@ -47,7 +46,7 @@ def argument_collection():
 
 def main():
     
-    work_here()
+    vh.work_here()
     
     lr( argument_collection().model_path,
         argument_collection().input_path,

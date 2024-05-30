@@ -1,10 +1,8 @@
-from helperfunctions import colorbank
+import vrashelper as vh
 from joblib import dump, load
-
 import os
 import pandas as pd
 import pickle
-
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -49,7 +47,7 @@ def tfidf_vect(X_name, y_name, save_model_path, training_split_value_percent, sh
     #save model
     print('saving model')
     dump(vectorizer, save_model_path)
-    print(colorbank.hackergreen + 'model saved' + colorbank.default)
+    print(vh.colorbank.hackergreen + 'model saved' + vh.colorbank.default)
 
     save_data = [feature_names, X_test_feats, X_train_feats, y_test, y_train]
 
@@ -65,7 +63,7 @@ def load_fitted_data(filepath):
     with open(filepath, "rb") as f:
         feature_names, X_test_feats, X_train_feats, y_test, y_train = pickle.load(f)
 
-    print(colorbank.hackergreen + 'data loaded' + colorbank.default)
+    print(vh.colorbank.hackergreen + 'data loaded' + vh.colorbank.default)
 
     return feature_names, X_test_feats, X_train_feats, y_test, y_train
 
@@ -74,7 +72,7 @@ def load_model(filepath):
     # Loading model
     print('loading model')
     clf = load(filepath)
-    print(colorbank.hackergreen + 'model loaded' + colorbank.default)
+    print(vh.colorbank.hackergreen + 'model loaded' + vh.colorbank.default)
 
     return clf
 
@@ -101,7 +99,7 @@ def lr(model_path, data_path, out_path, shuffle_seed, dump_model_path):
 
     print('saving model')
     dump(classifier, dump_model_path)
-    print(colorbank.hackergreen + 'model saved' + colorbank.default)
+    print(vh.colorbank.hackergreen + 'model saved' + vh.colorbank.default)
 
 
 def mlp(model_path, data_path, out_path, shuffle_seed, dump_model_path, hidden_layers, max_iterations):
@@ -128,4 +126,4 @@ def mlp(model_path, data_path, out_path, shuffle_seed, dump_model_path, hidden_l
 
     print('saving model')
     dump(classifier, dump_model_path)
-    print(colorbank.hackergreen + 'model saved' + colorbank.default)
+    print(vh.colorbank.hackergreen + 'model saved' + vh.colorbank.default)

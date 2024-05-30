@@ -1,6 +1,5 @@
-from helperfunctions import work_here
 from assignment2 import tfidf_vect
-
+import vrashelper as vh
 import os
 import argparse
 
@@ -35,8 +34,8 @@ def argument_collection():
         parser.add_argument(
                 "-o",
                 "--overwrite_save_path",
-                default=os.path.join('..', 'model', 'tfidf_vectorizor' + '.joblib'),
-                help="overwrite full save path for model. Needs to be a string and end with .joblib   Example: ../model/tfidf_vectorizor.joblib")
+                default=os.path.join('..', 'models', 'tfidf_vectorizor' + '.joblib'),
+                help="overwrite full save path for model. Needs to be a string and end with .joblib   Example: ../models/tfidf_vectorizor.joblib")
 
         parser.add_argument(
                 "-d",
@@ -57,7 +56,7 @@ def argument_collection():
 def main():
 
     #Set working directory to this .py file (then no need to cd into python file when pressing the "play button" in Visual Studio gui):
-    work_here()
+    vh.work_here()
 
     tfidf_vect( X_name = argument_collection().X_name,
                     y_name = argument_collection().y_name,
@@ -70,4 +69,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

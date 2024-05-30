@@ -1,1 +1,4 @@
-pip install pandas scikit-learn numpy
+pandas
+scikit-learn
+numpy
+git+https://github.com/Revo1999/vrashelper
