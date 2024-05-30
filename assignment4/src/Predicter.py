@@ -57,6 +57,7 @@ def dataprocessor():
 
     data_processed.write_csv("../out/with_predictions1.csv", separator=",") # Husk at rette det her navn på filen der bliver gemt
 
+
 def visualize_line_chart(data):
 
     data = data.filter(pl.col("Predictions") != "neutral") #Filter out neutral from plot
@@ -130,7 +131,7 @@ def main():
     visualize_line_chart(relative_frequencies).save("../out/LineChart.png")
     bar_chart(value_counts).save("../out/BarChart.png")
 
-
+    
 
     print(relative_frequencies)
     print(value_counts)
