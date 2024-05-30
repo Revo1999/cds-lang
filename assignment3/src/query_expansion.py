@@ -1,4 +1,4 @@
-from helperfunctions import work_here, colorbank
+import vrashelper as vh
 import polars as pl
 import os
 import gensim.downloader as api
@@ -8,7 +8,7 @@ def load_glove_wiki_gigaword50():
     #From my understanding it downloads in a specific place, when downloaded it will not download again.
     print('loading gensim pretrained model: glove-wiki-gigaword-50')
     return api.load("glove-wiki-gigaword-50")
-    print(colorbank.hackergreen + 'model loaded' + colorbank.default)
+    print(vh.colorbank.hackergreen + 'model loaded' + vh.colorbank.default)
 
 def load_spotify_csv():
     data_file_path = os.path.join('..', 'in', 'Spotify Million Song Dataset_exported.csv')
@@ -67,21 +67,50 @@ def processor(word, model, data, words_result_amount, artist, extended_info):
     procentage_hit, artist_cased, searched_word = round(result.shape[0]/compare.shape[0]*100, 1), result[0,0], word.lower()
 
     #Prints answer to console
-    print(f"{procentage_hit}% of {artist_cased}'s songs contain words related to {searched_word}")
+    print(vh.ctext.bold + f"{procentage_hit}% of {artist_cased}'s songs contain words related to {searched_word}" + vh.colorbank.default)
 
+def argument_collection():
+
+        parser = argparse.ArgumentParser()
+   
+        parser.add_argument(
+            "-m",
+            "--model_words_amount",
+            default=3,
+            help="How many words most similar supplies")
+
+        parser.add_argument(
+            "-a",
+            "--artist",
+            default="pHiL CoLlins",
+            help="Name of the artist")
+
+        parser.add_argument(
+            "-w",
+            "--word",
+            default="AiR",
+            help="The word you're searching for")
+
+        parser.add_argument(
+            "-e",
+            "--extended_search",
+            default=False,
+            help="Provides a printed list of the most similar words that extend your search")
+        
+        return parser.parse_args()
 
 def main():
-    work_here()
+    # Gets parsed args
+    words_result_amount = int(argument_collection().model_words_amount)
+    artist = argument_collection().artist
+    word = argument_collection().word
+    extended_info = argument_collection().extended_search
 
-    words_result_amount = 3
-    artist = 'pHiL CoLliNs'
-    word = 'AiR'
-    extended_info = False
-
+    # Loads model and data
     model = load_glove_wiki_gigaword50()
     data = load_spotify_csv()
 
-
+    # Applies logic
     processor(word=word, model=model, data=data, words_result_amount=words_result_amount, artist=artist, extended_info=extended_info)
 
 

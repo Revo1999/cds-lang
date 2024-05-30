@@ -1,13 +1,12 @@
 #!/usr/bin/bash
 
 # activate the environment
-source assignment3venv/bin/activate
-
-
-# Create argparse
+source assignment3_venv/bin/activate
 
 # run the code
-python src/polar.py
+cd src
+python query_expansion.py.py
+cd ..
 
 # close the environment
 deactivate

@@ -1,3 +1,4 @@
-gensim==4.3
-polars==0.2
-scipy==1.11
+gensim==4.3.2
+polars==0.20.30
+scipy==1.11.4
+git+https://github.com/Revo1999/vrashelper
