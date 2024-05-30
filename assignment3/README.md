@@ -26,17 +26,15 @@ In this assignment we were asked to create a little tool which takes artist and 
 
 ## Content table
 
-1. [Introduction](#assignment-1-simple-image-search-algorithm)
+## Content table
+
+1. [Introduction](#assignment-3-query-expansion-with-word-embeddings)
 2. [Project Structure](#project-structure)
 3. [Data Source](#data-source)
 4. [Usage](#usage)
 5. [Flags](#flags)
 6. [Compatibility & Other Uses](#compatibility--other-uses)
-7. [Outputs](#outputs)
-    1. [Compare Hist OpenCV](#compare-hist-opencv)
-    2. [Nearest Neighbor Sci-kit Learn](#nearest-neighbor-sci-kit-learn)
-8. [Limitations & Possible Improvements](#limitations--possible-improvements)
-
+7. [Limitations & Possible Improvements](#limitations--possible-improvements)
 <br>
 
 
@@ -124,17 +122,22 @@ The data contains lyrics from 57,650 English-language songs. It can be accessed 
 
 
 
-
 ## Compatibility & other uses
 
 The program is written quite specifically for this. But you could (with quite some effort) alter the code to read other csv's.
 
-## Outputs
 
 ## Limitations & possible improvements
 
-As of now the program relies on argparse to obtain the information the get the query. This also means that every time i need to send a query a bash script with flags is executed, further this implies that the whole program runs everytime. In the program loading the model takes longest. In an ideal world the program could be executed in python interactive mode, load the model once, and then take inputs. The pros of this is that if you have several queries the program can handle them much faster. The cons is if you have one query now, the setup is a little bit more consuming.
+As of now the program relies on argparse to obtain the information the get the query. This also means that every time i need to send a query a bash script with flags is executed, further this implies that the whole program runs everytime. In the program loading the model takes longest. In an ideal world the program could be executed in python interactive mode, load the model once, and then take inputs. The pros of this is that if you have several queries the program can handle them much faster. The cons is if you have one query now, the setup is a little bit more consuming. The program has been tracked with codecarbon for further documentation on this check out the bottom of this readme. The results show how much emission is created from the different parts of the program. This can rougly be translated to how much computing power each part of the program uses. Here's the results:
 
+![Description](https://github.com/Revo1999/cds-lang/blob/main/emissions/out/assignment3_emissions.png?raw=true)
+
+## Emissions
+
+*Codecarbon has been used to track the environmental impact of running this code which equates to:* **0.15 of co2-equivalents in grams**
+
+For calculation documentation see [Emissions](https://github.com/Revo1999/cds-lang/tree/main/emissions)
 
 
 

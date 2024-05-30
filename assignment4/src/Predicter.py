@@ -22,7 +22,7 @@ def load_model():
 
     return classifier
 
-def data_for_plotter(data_to_process, index_column, input_column):
+def data_for_plotter(data_to_process, index_column, input_column, data, classifier):
 
     text_to_predict = data.select([input_column]).to_series().to_list() #Select columns index and input
 
@@ -52,10 +52,11 @@ def dataprocessor():
     classifier= load_model()
 
     print("Beginning using classifier")
-    data_processed = data_for_plotter(data_to_process=data, index_column="Season", input_column="Sentence")
-    print(data_processed)
+    data_processed = data_for_plotter(data_to_process=data, index_column="Season", input_column="Sentence", data=data, classifier=classifier)
 
-    data_processed.write_csv("../out/with_predictions1.csv", separator=",") # Husk at rette det her navn på filen der bliver gemt
+    data_processed.write_csv("../out/with_predictions.csv", separator=",")
+
+    return data_processed
 
 
 def visualize_line_chart(data):
@@ -110,14 +111,8 @@ def bar_chart(data_counts):
 
 def main():
     vh.work_here() # Can use play button without the need to be in this directory
-
-    # If a dataset with all the predictions is appended dont load and run model.
-    if glob.glob(r"../in/with_predictions.csv") == False:
-      dataprocessor()
-    else:
-        data = pl.read_csv("../in/with_predictions.csv")
-
-
+    
+    data = dataprocessor()
 
     season_occur_counts = data['Season'].value_counts().sort(by="Season") #Creates a dataframe with seasons and the counts of all emotions
     season_counts = data.group_by(['Season', 'Predictions']).count().sort(by="Season") #Creates a dataframe with seasons and the counts of each emotion
@@ -140,16 +135,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-
-
-
-'''
-Predict emotion scores for all lines in the data
-
-For each season
-        Plot the distribution of all emotion labels in that season
-
-For each emotion label
-        Plot the relative frequency of each emotion across all seasons
-'''

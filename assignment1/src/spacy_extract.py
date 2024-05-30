@@ -119,7 +119,7 @@ def main():
     
     #Name of the folder to save output tables in. The code is written so the folder is in the "assignment1" folder. (But can be changed to other locations) Look project structure for guidance.
     save_tables_location = os.path.join('..',
-                                'tables')
+                                'out')
     
     #Remove metadata between '<' & '>' from input text-files
     meta_data_remove=True
