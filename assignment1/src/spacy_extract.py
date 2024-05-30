@@ -14,7 +14,7 @@ from tqdm import tqdm
 import re
 
 
-def read_file_to_doc(filepath, meta_data_remove):
+def read_file_to_doc(filepath, meta_data_remove, nlp):
     #This function reads .txt, removes anything from text that in between '<' & '>' and applies applies en_core_web_md on text
 
     #we use latin1 / ISO-8859-1 because the text is encoded with swedish characters
@@ -30,7 +30,7 @@ def read_file_to_doc(filepath, meta_data_remove):
     return doc
 
 
-def calculate_relative_frequencies(doc, exclude_punctuation):
+def calculate_relative_frequencies(doc, exclude_punctuation, relative_frequency_count):
             pos_counts = []
 
             for token in doc:
@@ -74,32 +74,37 @@ def calculate_unique_entities(doc):
 
 
 
-def processor():
+def processor(directory, meta_data_remove, exclude_punctuation, nlp, relative_frequency_count, save_tables_location):
     for folder in os.listdir(directory):
         folderpath = os.path.join(directory, folder)
         
         df = pd.DataFrame()
         print(f'processing folder: {folder}')
+
+        # Checks if the item in folderpath is a directory
+        if not os.path.isdir(folderpath):
+            continue
         
         for file in tqdm(os.listdir(folderpath), colour='green'): #tqdm creates a process bar in console
-            filename = file
-            filepath = os.path.join(folderpath, filename)
+            if file.endswith(".txt"):
+                filename = file
+                filepath = os.path.join(folderpath, filename)
 
-            # Reads file, removes meta data, apply spacy's en_core_web_md
-            doc = read_file_to_doc(filepath, meta_data_remove)
+                # Reads file, removes meta data, apply spacy's en_core_web_md
+                doc = read_file_to_doc(filepath, meta_data_remove, nlp)
 
-            #Calculates relative frequencies
-            noun_freq, verb_freq, adj_freq, adv_freq = calculate_relative_frequencies(doc, exclude_punctuation)
-           
-           #Calculating unique entities
-            ent_per, ent_loc, ent_org = calculate_unique_entities(doc)
+                #Calculates relative frequencies
+                noun_freq, verb_freq, adj_freq, adv_freq = calculate_relative_frequencies(doc, exclude_punctuation, relative_frequency_count)
             
-            write_row = pd.DataFrame({'Filename': [filename], 'RelFreq NOUN': [noun_freq], 'RelFreq VERB': [verb_freq], 'RelFreq ADJ': [adj_freq], 'RelFreq ADV': [adv_freq], 'Unique PER': [len(ent_per)], 'Unique LOC':[len(ent_loc)], 'Unique ORG':[len(ent_org)]})
-            
-            df = pd.concat([df, write_row], ignore_index=True)
+            #Calculates unique entities
+                ent_per, ent_loc, ent_org = calculate_unique_entities(doc)
+                
+                write_row = pd.DataFrame({'Filename': [filename], 'RelFreq NOUN': [noun_freq], 'RelFreq VERB': [verb_freq], 'RelFreq ADJ': [adj_freq], 'RelFreq ADV': [adv_freq], 'Unique PER': [len(ent_per)], 'Unique LOC':[len(ent_loc)], 'Unique ORG':[len(ent_org)]})
+                
+                df = pd.concat([df, write_row], ignore_index=True)
 
-            df.to_csv(f"{save_tables_location}/{folder}_table.csv", index=False)
-        
+                df.to_csv(f"{save_tables_location}/{folder}_table.csv", index=False)
+
 def main():
     # Simply ingores pandas' py-arrow future warning
     warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -125,7 +130,7 @@ def main():
     #Total frequency for relative frequency calculation
     relative_frequency_count = 10000
 
-    processor()
+    processor(directory, meta_data_remove, exclude_punctuation, nlp, relative_frequency_count, save_tables_location)
 
 
 

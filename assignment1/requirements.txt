@@ -1,2 +1,3 @@
-python -m spacy download en_core_web_md
-pip install spacy pandas tqdm
+pandas==2.2.2
+spacy==3.7.4
+tqdm==4.66.4
