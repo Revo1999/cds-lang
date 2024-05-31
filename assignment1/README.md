@@ -27,8 +27,8 @@ Extract the following information:
 3. [Data Source](#data-source)
 4. [Usage](#usage)
 5. [Compatibility & Other Uses](#compatibility--other-uses)
-6. [Outputs](#outputs)
-7. [Limitations & Possible Improvements](#limitations--possible-improvements)
+6. [Outputs](#output)
+7. [Limitations & Possible Improvements](#limitations)
 
 <br>
 
@@ -135,4 +135,4 @@ The program does not present the data in an easy to understand matter, understoo
 
 *Codecarbon has been used to track the environmental impact of running this code which equates to:* **2.16 of co2-equivalents in grams**
 
-For calculation documentation see [Emissions](https://github.com/Revo1999/cds-lang/tree/main/emissions)
+For calculation documentation see [Emissions](https://github.com/Revo1999/cds-lang/tree/main/emissions(assignment5))

@@ -1,5 +1,11 @@
-import vrashelper as vh
-from assignment2 import lr
+'''
+Assignment 2
+    Victor Rasmussen
+        Language Analytics, Aarhus University
+            31-05-2024
+'''
+import vrashelper as vh #Imports the package i've made for setting working directory automatically and enabling certain console text properties
+from assignment2 import lr #Imports lr function from assignment2.py
 import argparse
 import os
 
@@ -46,6 +52,7 @@ def argument_collection():
 
 def main():
     
+    # Makes the directory for all code execution
     vh.work_here()
     
     lr( argument_collection().model_path,

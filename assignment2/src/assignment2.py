@@ -1,3 +1,10 @@
+'''
+Assignment 2
+    Victor Rasmussen
+        Language Analytics, Aarhus University
+            31-05-2024
+'''
+
 import vrashelper as vh
 from joblib import dump, load
 import os
@@ -60,6 +67,7 @@ def tfidf_vect(X_name, y_name, save_model_path, training_split_value_percent, sh
 def load_fitted_data(filepath):
     print('loading fitted data')
 
+    # Loading the pickled data with pickle load
     with open(filepath, "rb") as f:
         feature_names, X_test_feats, X_train_feats, y_test, y_train = pickle.load(f)
 
@@ -83,16 +91,19 @@ def write_metrics(out_path, y_test, y_pred):
         file.write(classifier_metrics)
 
 def lr(model_path, data_path, out_path, shuffle_seed, dump_model_path):
-
+    #imports loaded data
     feature_names, X_test_feats, X_train_feats, y_test, y_train = load_fitted_data(data_path)
 
+    #loads model
     clf = load_model(model_path)
 
 
     print('testing model')
 
+    # Setting the classifier
     classifier = LogisticRegression(random_state=shuffle_seed).fit(X_train_feats, y_train)
 
+    # Make predictions
     y_pred = classifier.predict(X_test_feats)
 
     write_metrics(out_path, y_test, y_pred)
@@ -103,14 +114,16 @@ def lr(model_path, data_path, out_path, shuffle_seed, dump_model_path):
 
 
 def mlp(model_path, data_path, out_path, shuffle_seed, dump_model_path, hidden_layers, max_iterations):
-
+    # Imports loaded data
     feature_names, X_test_feats, X_train_feats, y_test, y_train = load_fitted_data(data_path)
 
+    # loads model
     clf = load_model(model_path)
 
 
     print('testing model')
 
+    # Setting the classifier
     classifier = MLPClassifier(activation = "logistic",
                            hidden_layer_sizes = (hidden_layers,),
                            max_iter=max_iterations,

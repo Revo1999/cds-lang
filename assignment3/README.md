@@ -26,8 +26,6 @@ In this assignment we were asked to create a little tool which takes artist and 
 
 ## Content table
 
-## Content table
-
 1. [Introduction](#assignment-3-query-expansion-with-word-embeddings)
 2. [Project Structure](#project-structure)
 3. [Data Source](#data-source)
@@ -42,25 +40,17 @@ In this assignment we were asked to create a little tool which takes artist and 
 ## Project Structure
 
 ```
-assignment1/
+assignment3/
 ├── in/
-│   ├── image_0001.jpg
-│   ├── image_0002.jpg
-│   └── image_0003.jpg
-├── out/
-│   ├── compare_hist_image_0321.jpg_results.csv
-│   ├── compare_hist.png
-│   ├── nearest_neighbor_image_0321.jpg_results.csv
-│   └── nearest_neighbor.png
+│   └── Spotify Million Song Dataset_exported.csv
 ├── src/
-│   ├── nearest_neighbor.py
-│   └── open_cv_compare_hist.py     
+│   └── query_expansion.py
 ├── createVEnv.sh
+├── image.png
 ├── README.md
 ├── requirements.txt
 ├── run_custom.sh
 └── run.sh
-
 ```
 
 ## Data source
@@ -131,13 +121,13 @@ The program is written quite specifically for this. But you could (with quite so
 
 As of now the program relies on argparse to obtain the information the get the query. This also means that every time i need to send a query a bash script with flags is executed, further this implies that the whole program runs everytime. In the program loading the model takes longest. In an ideal world the program could be executed in python interactive mode, load the model once, and then take inputs. The pros of this is that if you have several queries the program can handle them much faster. The cons is if you have one query now, the setup is a little bit more consuming. The program has been tracked with codecarbon for further documentation on this check out the bottom of this readme. The results show how much emission is created from the different parts of the program. This can rougly be translated to how much computing power each part of the program uses. Here's the results:
 
-![Description](https://github.com/Revo1999/cds-lang/blob/main/emissions/out/assignment3_emissions.png?raw=true)
+![Description](https://github.com/Revo1999/cds-lang/blob/main/emissions(assignment5)/out/assignment3_emissions.png?raw=true)
 
 ## Emissions
 
 *Codecarbon has been used to track the environmental impact of running this code which equates to:* **0.15 of co2-equivalents in grams**
 
-For calculation documentation see [Emissions](https://github.com/Revo1999/cds-lang/tree/main/emissions)
+For calculation documentation see [Emissions](https://github.com/Revo1999/cds-lang/tree/main/emissions(assignment5))
 
 
 

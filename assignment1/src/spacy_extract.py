@@ -2,7 +2,7 @@
 Assignment 1
     Victor Rasmussen
         Language Analytics, Aarhus University
-            23-02-2024
+            31-05-2024
 '''
 
 import os                           
@@ -25,6 +25,7 @@ def read_file_to_doc(filepath, meta_data_remove, nlp):
     if meta_data_remove == True:
         cleaned_text = re.sub(r'<[^>]+>', '', text)
 
+    # Applies model
     doc = nlp(cleaned_text)
 
     return doc
@@ -33,6 +34,7 @@ def read_file_to_doc(filepath, meta_data_remove, nlp):
 def calculate_relative_frequencies(doc, exclude_punctuation, relative_frequency_count):
             pos_counts = []
 
+            # For tokens in doc append to pos_counts
             for token in doc:
                 pos_counts.append(token.pos_)
 
@@ -42,6 +44,7 @@ def calculate_relative_frequencies(doc, exclude_punctuation, relative_frequency_
             else:
                 num_words = sum(1 for token in doc)
 
+            # Calculating relative frequencies
             noun_freq = round(pos_counts.count('NOUN')/num_words*relative_frequency_count, 2)
             verb_freq = round(pos_counts.count('VERB')/num_words*relative_frequency_count, 2)
             adj_freq = round(pos_counts.count('ADJ')/num_words*relative_frequency_count, 2)
@@ -54,6 +57,7 @@ def calculate_relative_frequencies(doc, exclude_punctuation, relative_frequency_
 
 def calculate_unique_entities(doc):
    
+   # Sets can be used to calculate unique entries
     ent_per = set()
     ent_loc = set()
     ent_org = set()
@@ -130,6 +134,7 @@ def main():
     #Total frequency for relative frequency calculation
     relative_frequency_count = 10000
 
+    #Executing all processing
     processor(directory, meta_data_remove, exclude_punctuation, nlp, relative_frequency_count, save_tables_location)
 
 

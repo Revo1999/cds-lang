@@ -1,3 +1,9 @@
+'''
+Assignment 3
+    Victor Rasmussen
+        Language Analytics, Aarhus University
+            31-05-2024
+'''
 import vrashelper as vh
 import polars as pl
 import os
@@ -23,6 +29,7 @@ def load_spotify_csv():
 
 
 def input_check(input):
+    # Checking whether the artist in input exists in the dataset
     if input.lower() in data['artist'].str.lower().to_list():
         return True
     else:
@@ -32,6 +39,7 @@ def input_check(input):
 
 
 def create_search_words(word_input, model, words_result_amount):
+    # Extend query with gensim model
     model_words = model.most_similar(word_input.lower(), topn=words_result_amount)
     output_words = []
 

@@ -1,5 +1,11 @@
-import vrashelper as vh
-from assignment2 import mlp
+'''
+Assignment 2
+    Victor Rasmussen
+        Language Analytics, Aarhus University
+            31-05-2024
+'''
+import vrashelper as vh #Imports the package i've made for setting working directory automatically and enabling certain console text properties
+from assignment2 import mlp #Imports mlp function from assignment2.py
 import argparse
 import os
 

@@ -1,5 +1,8 @@
 '''
-Assignment 5 code
+Assignment 5
+    Victor Rasmussen
+        Language Analytics, Aarhus University
+            31-05-2024
 '''
 
 import os
@@ -13,18 +16,23 @@ import polars as pl
 import altair as alt
 import vegafusion as vf
 
+
 def list_files(directory, exclude_subfolders=None):
+    # If theres is no folder to exclude make list empty
     if exclude_subfolders is None:
         exclude_subfolders = []
 
+    # Get every value in list
     exclude_subfolders = [os.path.abspath(os.path.join(directory, subfolder)) for subfolder in exclude_subfolders]
 
     file_paths = []
     
+
     for root, dirs, files in os.walk(directory):
         # Remove subfolders that should be excluded
         dirs[:] = [d for d in dirs if os.path.abspath(os.path.join(root, d)) not in exclude_subfolders]
         
+        # Creates file paths for the directory
         for file in files:
             relative_path = os.path.relpath(os.path.join(root, file), directory)
             file_paths.append(relative_path)
@@ -67,8 +75,10 @@ def make_a_folder_req_list(files):
     return dir_to_create
 
 def make_folders(files):
+    # List directories
     mkdir_list = make_a_folder_req_list(files)
 
+    # Creates the folders needed
     for paths in mkdir_list:
         os.makedirs(paths, exist_ok=True)
 
@@ -87,12 +97,13 @@ def copy_project_folder(directory_to_copy, subfolders_to_exclude):
         # Destination folders created
         make_folders(to_list)
 
+        # Copies all from the from_list, to their new destination which is listed in the to_list
         for i in tqdm.tqdm(range(len(from_list)), desc=f"Copying: {os.path.split(directory_to_copy)[-1]}", colour="green"):
                 if not os.path.exists(to_list[i]):
                     shutil.copy(from_list[i], to_list[i])
                 else:
                     print(f"File {to_list[i]} already exists and will not be overwritten. (Is expected for py-files in src)")
-    
+    # If error occur
     else:
         print(vh.colorbank.error_red + f"The folder you are trying to copy does not exist. {directory_to_copy}. If the filepath looks right be sure that you are running this through run.sh or that you changed directory into src folder" + vh.colorbank.default)
         quit()
@@ -135,17 +146,19 @@ def run_venv_scripts(venv_filename, directory):
     for file in run_list:
         file_to_call = os.path.join("..", "temp", file)
 
+        # This directory
         script_directory = os.path.dirname(file_to_call)
 
+        # Changes dir to "this directory" 
         os.chdir(script_directory)
         
-        # Add execute permission if not already set
+        # Adds execute permission if not already set
         os.chmod(os.path.split(file_to_call)[-1], 0o755)
         
-        # Execute the script with its full path
+        # Executes the script with its full path
         call(str("bash " + os.path.split(file_to_call)[-1]), shell=True)
         
-        # Revert back to the original directory
+        # Reverts back to the original directory
         os.chdir(this_directory)
 
 def copy_py_files(directory_to_copy):
@@ -158,6 +171,7 @@ def copy_py_files(directory_to_copy):
         # Sort for src files
         src_list = []
 
+        # Only copy the files in src folder ending with .py
         for filepath in file_list:
             if filepath.startswith("src") and filepath.endswith(".py"):
                 src_list.append(filepath)
@@ -169,6 +183,7 @@ def copy_py_files(directory_to_copy):
         # Destination folders created
         make_folders(to_list)
 
+        # Copies
         for i in tqdm.tqdm(range(len(from_list)), desc=f"Copying: {os.path.split(directory_to_copy)[-1]}", colour="green"):
             shutil.copy(from_list[i], to_list[i])
     
@@ -191,11 +206,12 @@ def py_editor(py_path):
 
     new_py_file = import_lines + tracker_lines + content + last_line
 
+    # Writes the modified py-file
     with open(py_path, 'w') as file:
         file.write(new_py_file)
 
 def press_anything_to_continue():
-
+    # Press enter to continue having an input which is never used anywhere
     print('\n\ngo to temp folder an add tracker.start_task("TASK NAME") and tracker.stop_task() to all assignment in python code\nPress enter to continue...')
     user_input = input()
 
@@ -230,22 +246,23 @@ def run_run_scripts(run_filename, directory):
 
         os.chdir(script_directory)
         
-        # Add execute permission if not already set
+        # Adds execute permission if not already set
         os.chmod(os.path.split(file_to_call)[-1], 0o755)
         
-        # Execute the script with its full path
+        # Executes the script with its full path
         call(str("bash " + os.path.split(file_to_call)[-1]), shell=True)
         
-        # Revert back to the original directory
+        # Reverts back to the original directory
         os.chdir(this_directory)
 
 def copy_emission_csv(directory, to_directory):
         
         file_list = list_files(directory)
         
-        # Sort for src files
+        # Sorts for src files
         csv_list = []
         
+        # if in src folders and end with csv (which is the emissions files)
         for filepath in file_list:
             if os.path.normpath(filepath).split(os.sep)[1] == "src" and filepath.endswith(".csv"):
                 csv_list.append(filepath)
@@ -256,10 +273,10 @@ def copy_emission_csv(directory, to_directory):
         for paths in csv_list:
             new_csv_list.append(os.path.normpath(paths).split(os.sep)[-1])
         
-        print(new_csv_list)
+        
         to_list = create_to_list(to_directory, files=new_csv_list)
         
-        print(csv_list)
+        # Copy selected files - from from_list to to_list
         for i in tqdm.tqdm(range(len(from_list)), desc="Copying Emission CSV's", colour="green"):
             directory, filename = os.path.split(to_list[i])
             new_filename = f"{os.path.join(directory, str(os.path.normpath(from_list[i]).split(os.sep)[-3]) + filename)}" # If filenames are the same i add the index to the filename
@@ -268,30 +285,36 @@ def copy_emission_csv(directory, to_directory):
 
 def read_csv_with_filename(file_path):
     
-    
+    # Reads csv
     data = pl.read_csv(file_path)
     
-    
+    # Assign filename
     filename = os.path.basename(file_path)
     
-    
+    # Adds filename column
     data = data.with_columns(pl.lit(filename).alias("filename"))
     return data
 
 def load_emissions(emission_folder):
+    
     full_program_emissions = []
     task_emissions = []
     
+
+    # Use string length to determine whether its a emission base csv or normal emission csv
     for csv_file in glob.glob(emission_folder):
         if csv_file.endswith("emissions.csv"):
             full_program_emissions.append(csv_file)
         else:
             task_emissions.append(csv_file)
 
+
     full_program_emissions_read = [read_csv_with_filename(csv_file) for csv_file in full_program_emissions]
 
     task_emissions_read = [read_csv_with_filename(csv_file) for csv_file in task_emissions]
 
+
+    # Combines the csv's into one for each category
     full_program_emissions_all = pl.concat(full_program_emissions_read)
     task_emissions_all = pl.concat(task_emissions_read)
 
@@ -316,13 +339,14 @@ def bar_chart(data, x_name, y_name, graph_title):
 def visualize_emissions():
     vf.enable()
 
+    # Get csv's loaded
     full_program_emissions_all, task_emissions_all = load_emissions(os.path.join("..", "csv", "*"))
 
     bar_chart(data = full_program_emissions_all, x_name="project_name", y_name="emissions", graph_title="Py files Emissions").save(os.path.join("..", "out", "Emissions2.png"))
 
     unique_reports = full_program_emissions_all['filename'].unique().to_list()
 
-
+    # Create report with all programs full emissions
     full_program_emissions = []
     for reports in unique_reports:
         visualize_this_df = full_program_emissions_all.filter(pl.col("filename") == reports)
@@ -331,12 +355,14 @@ def visualize_emissions():
         full_program_emissions.append(visualize_this_df)
     
     full_program_emissions_done = pl.concat(full_program_emissions)
-    full_program_emissions_done.write_csv(os.path.join("..", "out", "Full_program_emissions.csv"))
+    full_program_emissions_done.write_csv(os.path.join("..", "out", "Full_program_emissions.csv")) # Write the csv
     
+    # Visualize beforementioned csv
     bar_chart(data = full_program_emissions_done, x_name="name", y_name="emissions", graph_title="Assignment Emissions").save(os.path.join("..", "out", "Assignments_emissions.png"))
 
     assignment_emissions = []
 
+    # Visualize tasks for every report name
     for directory in directory_to_search:
         try:
              part_to_match = os.path.normpath(directory).split(os.sep)[-1]
@@ -386,8 +412,10 @@ for root, dirs, files in os.walk(os.path.join("..", "temp")):
             if os.path.normpath(py_file).split(os.sep)[-1] not in py_exclude:
                 py_editor(py_file)
 
+# Press enter to continue gives the user time to edit their py files
 press_anything_to_continue()
 
+# Copies the rest
 for directory in directory_to_search:
     copy_project_folder(directory, subfolders_to_exclude=exclude_folders)
 
@@ -395,6 +423,8 @@ for directory in directory_to_search:
 run_venv_scripts(directory=os.path.join("..", "temp"), venv_filename=createVEnv_filename)
 run_run_scripts(directory=os.path.join("..", "temp"), run_filename=run_filename)
 
+# Copies emissions csv from temp folder to csv-folder
 copy_emission_csv(directory=os.path.join("..", "temp"), to_directory=os.path.join("..", "csv"))
 
+# Visualizes the csv's
 visualize_emissions()
